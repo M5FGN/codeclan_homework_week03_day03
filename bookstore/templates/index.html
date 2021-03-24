@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary's Book Store :: {{title}} </title>
+</head>
+<body>
+    <h1>Mary's Book Store - Order List</h1>
+
+    {% for order in orders %}
+    <section>
+        <p>
+            <p>Order Number: {{ order.order_number }}</p>
+            <p>Customer Name: {{ order.customer_name }}</p>
+            <p>Order Date: {{ order.order_date }}</p>
+            <p>Quantity: {{ order.quantity }}</p>
+            <p>Title: {{ order.title }}</p>
+            <p>Author: {{ order.author }}</p>
+            <p>Publication Year: {{ order.publication_year }}</p>
+            <p><a href="/orders/{{orders.index(order)}}">More Details ...</a></p>
+            <hr>
+        </p>
+    </section>
+    {% endfor %}
+
+</body>
+</html>
